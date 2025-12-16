@@ -4,6 +4,10 @@ import morgan from "morgan";
 
 import authRoutes from "./routes/auth.routes.js";
 import productRoutes from "./routes/product.routes.js";
+import taskRoutes from "./routes/task.routes.js";
+import colorRoutes from "./routes/color.routes.js";
+import postRoutes from "./routes/post.routes.js";
+import bannerRoutes from "./routes/banner.routes.js";
 
 const app = express();
 
@@ -21,7 +25,11 @@ app.get("/", (req, res) => {
     version: "1.0.0",
     endpoints: {
       auth: "/api/auth",
-      products: "/api/products"
+      products: "/api/products",
+      tasks: "/api/tasks",
+      colors: "/api/colors",
+      posts: "/api/posts",
+      banners: "/api/banners"
     }
   });
 });
@@ -29,6 +37,11 @@ app.get("/", (req, res) => {
 // Rutas
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+// Rutas para tarea
+app.use("/api/tasks", taskRoutes);
+app.use("/api/colors", colorRoutes);
+app.use("/api/posts", postRoutes);
+app.use("/api/banners", bannerRoutes);
 
 // Manejo de rutas no encontradas
 app.use((req, res) => {
