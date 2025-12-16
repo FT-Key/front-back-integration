@@ -9,10 +9,7 @@ export default function RegisterFetch() {
     const response = await fetch("http://localhost:4000/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...form,
-        createdAt: new Date().toISOString()
-      }),
+      body: JSON.stringify(form),
     });
 
     const data = await response.json();
@@ -27,9 +24,9 @@ export default function RegisterFetch() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="Nombre" onChange={e => setForm({...form, name: e.target.value})} />
-      <input placeholder="Email" onChange={e => setForm({...form, email: e.target.value})} />
-      <input type="password" placeholder="Password" onChange={e => setForm({...form, password: e.target.value})} />
+      <input placeholder="Nombre" onChange={e => setForm({ ...form, name: e.target.value })} />
+      <input placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} />
+      <input type="password" placeholder="Password" onChange={e => setForm({ ...form, password: e.target.value })} />
       <button>Registrar</button>
     </form>
   );
