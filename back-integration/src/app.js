@@ -1,0 +1,51 @@
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+
+import authRoutes from "./routes/auth.routes.js";
+import productRoutes from "./routes/product.routes.js";
+
+const app = express();
+
+// Middlewares
+app.use(cors());
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Ruta de bienvenida
+app.get("/", (req, res) => {
+  res.json({
+    message: "🚀 API Integration Backend",
+    status: "running",
+    version: "1.0.0",
+    endpoints: {
+      auth: "/api/auth",
+      products: "/api/products"
+    }
+  });
+});
+
+// Rutas
+app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
+
+// Manejo de rutas no encontradas
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Ruta no encontrada",
+    path: req.path,
+    method: req.method
+  });
+});
+
+// Manejo de errores global
+app.use((err, req, res, next) => {
+  console.error("❌ Error:", err.message);
+  res.status(err.status || 500).json({
+    error: err.message || "Error interno del servidor",
+    ...(process.env.NODE_ENV === "development" && { stack: err.stack })
+  });
+});
+
+export default app;

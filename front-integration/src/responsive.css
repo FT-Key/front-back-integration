@@ -1,0 +1,353 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Tablets y pantallas medianas (768px - 1024px) */
+@media (max-width: 1024px) {
+  #root {
+    padding: 25px;
+  }
+
+  nav {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Tablets pequeñas (600px - 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  #root {
+    padding: 20px;
+    border-radius: 15px;
+    min-height: calc(100vh - 30px);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  nav a {
+    text-align: center;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h2::before {
+    height: 25px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  input, button {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  li img {
+    height: 150px;
+  }
+
+  hr {
+    margin: 30px 0;
+  }
+}
+
+/* Móviles (320px - 600px) */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  #root {
+    padding: 15px;
+    border-radius: 12px;
+    min-height: calc(100vh - 20px);
+  }
+
+  nav {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  h2::before {
+    width: 4px;
+    height: 20px;
+  }
+
+  form {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  input, button {
+    padding: 11px 14px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 12px 20px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  li {
+    padding: 12px;
+  }
+
+  li img {
+    height: 200px;
+  }
+
+  li strong {
+    font-size: 1rem;
+  }
+
+  hr {
+    margin: 25px 0;
+  }
+}
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  form {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  input, button {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li img {
+    height: 180px;
+    border-radius: 6px;
+  }
+
+  nav a {
+    padding: 9px 16px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+}
+
+/* Pantallas muy grandes (1440px+) */
+@media (min-width: 1440px) {
+  #root {
+    max-width: 1400px;
+    padding: 40px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  li img {
+    height: 200px;
+  }
+
+  form {
+    padding: 30px;
+  }
+
+  input, button {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
+
+  #root {
+    padding: 15px;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    width: auto;
+    flex: 0 1 auto;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  li img {
+    height: 120px;
+  }
+}
+
+/* Accesibilidad: Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  button::before,
+  li:hover img,
+  form:hover {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Modo oscuro (detección del sistema) */
+@media (prefers-color-scheme: dark) {
+  /* Esta sección está preparada para futuras implementaciones de modo oscuro */
+  /* Puedes descomentar y ajustar según necesites */
+  
+  /*
+  :root {
+    --dark: #f9fafb;
+    --white: #1f2937;
+    --light-gray: #374151;
+    --border: #4b5563;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  #root {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  input, form {
+    background: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+  }
+  
+  li {
+    background: #374151;
+    border-color: #4b5563;
+  }
+  */
+}
+
+/* Impresión */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  #root {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  nav, button {
+    display: none;
+  }
+
+  form {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    color: black;
+  }
+}
+
+/* Mejoras táctiles para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  button, nav a, input {
+    min-height: 44px; /* Tamaño mínimo recomendado para toques */
+  }
+
+  button {
+    padding: 14px 24px;
+  }
+
+  nav a {
+    padding: 12px 20px;
+  }
+
+  input {
+    padding: 14px 16px;
+  }
+}
