@@ -1,21 +1,38 @@
 /* Variables CSS - Paleta de colores moderna */
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
-  --secondary: #8b5cf6;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --dark: #1f2937;
-  --gray: #6b7280;
-  --light-gray: #f3f4f6;
+  --primary: #2563eb;
+  /* Azul profesional */
+  --primary-dark: #1e40af;
+  /* Azul profundo */
+  --primary-light: #93c5fd;
+  /* Azul claro sutil */
+
+  --secondary: #475569;
+  /* Gris azulado */
+
+  --success: #16a34a;
+  /* Verde sobrio */
+  --warning: #ca8a04;
+  /* Ámbar apagado */
+  --danger: #dc2626;
+  /* Rojo profesional */
+
+  --dark: #0f172a;
+  /* Gris muy oscuro */
+  --gray: #64748b;
+  /* Gris neutro */
+  --light-gray: #f8fafc;
+  /* Fondo limpio */
   --white: #ffffff;
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --shadow-md: rgba(0, 0, 0, 0.15);
-  --shadow-lg: rgba(0, 0, 0, 0.2);
+
+  --border: #e2e8f0;
+  /* Bordes suaves */
+
+  --shadow: rgba(15, 23, 42, 0.08);
+  --shadow-md: rgba(15, 23, 42, 0.12);
+  --shadow-lg: rgba(15, 23, 42, 0.18);
 }
+
 
 /* Reset y base */
 * {
