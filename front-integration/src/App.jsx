@@ -24,9 +24,10 @@ export default function App() {
         <Link to="/login">🔐 Login</Link>
         <Link to="/register">📝 Register</Link>
         <Link to="/products">🛍️ Products</Link>
+        <Link to="/colors">🎨 Colors</Link>
 
         {/* <Link to="/tasks">✅ Tasks</Link>
-        <Link to="/colors">🎨 Colors</Link>
+      
         <Link to="/posts">📰 Posts</Link>
         <Link to="/banners">🖼️ Banners</Link> */}
       </nav>
