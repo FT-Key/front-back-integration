@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-// import ColorsFetch from "../components/ColorsFetch";
-// import ColorsAxios from "../components/ColorsAxios";
+import ColorsFetch from "../components/ColorsFetch.jsx";
+import ColorsAxios from "../components/ColorsAxios.jsx";
 
 export default function Colors() {
   const [method, setMethod] = useState("fetch");
@@ -34,7 +34,7 @@ export default function Colors() {
             </div>
             <p>Listado y administración de colores desde el backend.</p>
 
-            {/* <ColorsFetch /> */}
+            <ColorsFetch />
           </div>
         )}
 
@@ -46,7 +46,7 @@ export default function Colors() {
             </div>
             <p>Gestión de colores usando Axios y middlewares de auth.</p>
 
-            {/* <ColorsAxios /> */}
+            <ColorsAxios />
           </div>
         )}
       </div>
